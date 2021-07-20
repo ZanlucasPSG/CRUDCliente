@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.entity.Cliente;
+import com.example.demo.repository.ClientesRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -12,10 +13,10 @@ import org.springframework.context.annotation.Bean;
 public class DemoApplication {
 
 	@Bean
-	public CommandLineRunner run(@Autowired DemoApplication repository){
+	public CommandLineRunner run(@Autowired ClientesRepository repository){
 		return args -> {
 			Cliente cliente = Cliente.builder().cpf("00000000000").nome("Carlim").build();
-			//repository.save(cliente);
+			repository.save(cliente);
 		};
 	}
 	public static void main(String[] args) {
