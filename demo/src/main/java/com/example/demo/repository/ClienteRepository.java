@@ -6,6 +6,6 @@ import org.springframework.boot.CommandLineRunner;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public class ClienteRepository extends JpaRepository<Cliente,Integer>{
+public interface ClienteRepository extends JpaRepository<Cliente,Integer>{
     
 }
